@@ -2,7 +2,7 @@
 
 AI Chat App using Generative Language Client API
 
-[AxionAI]()
+[AxionAI](axionai.netlify.app)
 
 ## Setup Procedure
 

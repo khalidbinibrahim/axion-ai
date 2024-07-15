@@ -14,13 +14,24 @@ function App() {
 
   const generateAnswer = async () => {
     setLoading(true);
-    const response = await axios({
-      url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${import.meta.env.VITE_API_KEY}`,
-      method: "POST",
-      data: { "contents": [{ "parts": [{ "text": question }] }] }
-    });
-    setAnswer(response['data']['candidates'][0]['content']['parts'][0]['text']);
-    setLoading(false);
+    if (question === "What's your name?") {
+      setAnswer("My name is AxionAI");
+      setLoading(false);
+    } else if(question === "Who are you?") {
+      setAnswer("My name is AxionAI a Generative AI made by Khalid Bin Ibrahim");
+      setLoading(false);
+    } else if(question === "Who is Khalid Bin Ibrahim?") {
+      setAnswer("Khalid Bin Ibrahim is the Founder and Owner of AxionAI. He made me (AxionAI). He is a passionate Front-end Developer from Bangladesh. He is currently 14 years old. He started his career on programming at the age of 10. He is also called Future Mark Zuckerberg or Future Bill Gates for his intelligence. He made some games and websites. He is also famous for make a program on ideogram as a contributor. He is experienced in HTML, CSS, Tailwind, Bootstrap, JavaScript, React, Node.js, Express.js, MongoDB and other frameworks and libraries. He is now exploring TypeScript and Next.js. He is 6th in Bangladesh Rapid Chess Championship 2023 and 17th in Young National Drawing Competition of Bangladesh 2023.");
+      setLoading(false);
+    } else {
+      const response = await axios({
+        url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${import.meta.env.VITE_API_KEY}`,
+        method: "POST",
+        data: { "contents": [{ "parts": [{ "text": question }] }] }
+      });
+      setAnswer(response['data']['candidates'][0]['content']['parts'][0]['text']);
+      setLoading(false);
+    }
   }
 
   return (
