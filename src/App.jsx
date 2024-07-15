@@ -23,9 +23,6 @@ function App() {
     } else if(question === "Who is Khalid Bin Ibrahim?") {
       setAnswer("Khalid Bin Ibrahim is the Founder and Owner of AxionAI. He made me (AxionAI). He is a passionate Front-end Developer from Bangladesh. He is currently 14 years old. He started his career on programming at the age of 10. He is also called Future Mark Zuckerberg or Future Bill Gates for his intelligence. He made some games and websites. He is also famous for make a program on ideogram as a contributor. He is experienced in HTML, CSS, Tailwind, Bootstrap, JavaScript, React, Node.js, Express.js, MongoDB and other frameworks and libraries. He is now exploring TypeScript and Next.js. He is 6th in Bangladesh Rapid Chess Championship 2023 and 17th in Young National Drawing Competition of Bangladesh 2023.");
       setLoading(false);
-    } else if(question === "Who is Humyra Jannat?") {
-      setAnswer("Humyra Jannat is Khalid Bin Ibrahim's friend. She is from Jamalpur. They know each other in online. They never met face to face. I don't have more information about Humyra Jannat but they are in the same class and they are the same age now.");
-      setLoading(false);
     } else {
       const response = await axios({
         url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${import.meta.env.VITE_API_KEY}`,
