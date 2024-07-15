@@ -2,7 +2,7 @@
 
 AI Chat App using Generative Language Client API
 
-Live site link: (axionai.netlify.app)
+#### Live site link: (https://axionai.netlify.app)
 
 ## Setup Procedure
 
